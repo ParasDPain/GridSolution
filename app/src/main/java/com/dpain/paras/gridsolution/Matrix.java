@@ -2,7 +2,6 @@ package com.dpain.paras.gridsolution;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 
 // Add error checks (use false returns in boolean functions)
 public class Matrix {
@@ -129,13 +128,11 @@ public class Matrix {
             setRowSize(size);
             setColumnSize(size);
             double[][] newGrid = new double[rowSize][columnSize];
-            Random rnd = new Random(range);
 
             // Simple cyclic increment
             // Cycle through the row for each column
             for(int ro = 0; ro < rowSize; ro++) {
                 for (int col = 0; col < columnSize; col++) {
-                    // newGrid[ro][col] = rnd.nextInt((int) range);
                     newGrid[ro][col] = Math.round(Math.random() * range);
                 }// --Column loop end
             }// --Row loop end
