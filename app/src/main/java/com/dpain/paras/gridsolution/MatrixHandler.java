@@ -5,14 +5,14 @@ import android.graphics.Color;
 import android.text.InputType;
 import android.view.Gravity;
 import android.widget.EditText;
-import android.widget.HorizontalScrollView;
+import android.widget.LinearLayout;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 
 public class MatrixHandler {
 
     // View which is supposed to contain the generated matrix TableLayout
-    private HorizontalScrollView _parentView;
+    private LinearLayout _parentView;
     // Context of the parentView
     private Context _parentContext;
     // Associated Matrix object and related attributes
@@ -28,7 +28,7 @@ public class MatrixHandler {
     private EditText[][] _txtBoxVal;
 
 
-    public MatrixHandler(Matrix M, HorizontalScrollView ParentView) {
+    public MatrixHandler(Matrix M, LinearLayout ParentView) {
         _m = M;
         _roSize = _m.getRowSize();
         _colSize = _m.getColumnSize();
@@ -43,8 +43,8 @@ public class MatrixHandler {
 
     public void DisplayMatrix() {
         // Init _mainTable with basic attributes
-        _mainTable.setGravity(Gravity.START);
-        _mainTable.setBackgroundResource(R.drawable.rect_empty_border);
+        _mainTable.setGravity(Gravity.CENTER_HORIZONTAL);
+        //_mainTable.setBackgroundResource(R.drawable.rect_empty_border);
 
         // testing--
         int dispWidth = _parentContext.getResources().getDisplayMetrics().widthPixels;
