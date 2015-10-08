@@ -1,33 +1,49 @@
 package com.dpain.paras.gridsolution;
 
-import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutCompat;
-import android.widget.HorizontalScrollView;
-import android.widget.LinearLayout;
-import android.widget.Space;
+import android.support.v4.app.FragmentActivity;
+import android.support.v4.view.ViewPager;
+import android.view.View;
+import android.widget.Button;
 
-public class MainActivity extends Activity {
+import com.dpain.paras.gridsolution.ProjectMatrix.Matrix;
+import com.dpain.paras.gridsolution.ProjectMatrix.Operator;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
+
+public class MainActivity extends FragmentActivity {
+    // SwipeView and it's list adapter
+    // adapter feeds a list of fragments for the SwipeView to display
+    ViewPager swipeView;
+    MatrixCollectionPagerAdapter adapter;
+
+    // Testing
+    Intent sendResult;
+    public final static String RESULT_MATRIX = "com.dpain.paras.gridsolution.MATRIX";
+
+    Button btnCalculate;
+
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // limit of the randomly generated numbers (zero based)
-        long randSeed = 100;
-        Matrix m = new Matrix(5, randSeed);
-        Matrix n = new Matrix(4, (long)50);
+        // Init and set the adapter
+        adapter = new MatrixCollectionPagerAdapter(getSupportFragmentManager());
+        swipeView = (ViewPager) findViewById(R.id.swipe_view);
+        swipeView.setAdapter(adapter);
 
-        // View which is supposed to contain the generated matrix TableLayout
-        LinearLayout parentView = (LinearLayout) findViewById(R.id.test_container);
+        btnCalculate = (Button) findViewById(R.id.btn_calculate);
+        sendResult = new Intent(this, ResultActivity.class);
+    }
 
-        MatrixHandler first = new MatrixHandler(m, parentView);
-        first.DisplayMatrix();
-        Space spacer = new Space(parentView.getContext());
-        spacer.setMinimumHeight(20);
-        parentView.addView(spacer);
-        MatrixHandler second = new MatrixHandler(n, parentView);
-        second.DisplayMatrix();
+    public void Calculate(View view) {
+        // Construct an empty matrix
+        Matrix result = new Matrix(5, 5);
+        for (int i = 0; i < adapter.getCount(); i++) {
+            MatrixFragment frag = (MatrixFragment) adapter.getItem(i);
+            result = Operator.Plus(result, frag.m);
+        }
+        sendResult.putExtra(RESULT_MATRIX, result.getGrid());
+        startActivity(sendResult);
     }
 }

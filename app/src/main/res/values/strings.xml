@@ -2,4 +2,7 @@
     <string name="app_name">GridSolution</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="btn_desc_transpose">Transpose</string>
+    <string name="btn_desc_Inverse">Inverse</string>
+    <string name="btn_calculate">Calculate</string>
 </resources>

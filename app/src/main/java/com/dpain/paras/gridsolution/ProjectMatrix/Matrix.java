@@ -1,4 +1,4 @@
-package com.dpain.paras.gridsolution;
+package com.dpain.paras.gridsolution.ProjectMatrix;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -153,7 +153,7 @@ public class Matrix {
 
             try {
                 grid[posX][posY] = value;
-            } catch (IndexOutOfBoundsException e) {;
+            } catch (IndexOutOfBoundsException e) {
                 return false;
             }
 
