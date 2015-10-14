@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Edit {
 
-    private static Matrix error = new Matrix(0, 0);
+    private static final Matrix error = new Matrix(0, 0);
 
     // Multiplies the matrix with a scalar value
     public static Matrix ScalarProduct(Matrix m, double s) {
@@ -24,9 +24,8 @@ public class Edit {
                     newGrid[ro][col] = s * grid[ro][col];
                 }// --Column loop end
             }// --Row loop end
-
-            Matrix result = new Matrix(newGrid);
-            return result;
+            
+            return new Matrix(newGrid);
         }
         return error;
     }
@@ -47,9 +46,8 @@ public class Edit {
                     newGrid[col][ro] = grid[ro][col];
                 }// --Column loop end
             }// --Row loop end
-
-            Matrix result = new Matrix(newGrid);
-            return result;
+            
+            return new Matrix(newGrid);
         }
         return error;
     }
@@ -72,7 +70,7 @@ public class Edit {
         // Removed row/columns will be the ones above the sent values, arrays start from 0
         // OutOfBound values in the row/column list will return garbled Matrix due to reduced size and zero removal
         if (m.getValidity() && m.getRowSize() > listOfRows.size() && m.getColumnSize() > listOfColumns.size()) {
-            List<Double> buffer = new ArrayList<Double>();
+            List<Double> buffer = new ArrayList<>();
 
             int row = m.getRowSize();
             int column = m.getColumnSize();
@@ -123,9 +121,8 @@ public class Edit {
                     index++;
                 }// --Column loop end
             }// --Row loop end
-
-            Matrix s = new Matrix(newGrid);
-            return s;
+            
+            return new Matrix(newGrid);
         }
         return error;
     }

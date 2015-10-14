@@ -46,4 +46,9 @@ public class MainActivity extends FragmentActivity {
         sendResult.putExtra(RESULT_MATRIX, result.getGrid());
         startActivity(sendResult);
     }
+
+    public void NewMatrix(View view) {
+        // Add one item after the current item in the adapter
+        // set the current item to the new item
+    }
 }

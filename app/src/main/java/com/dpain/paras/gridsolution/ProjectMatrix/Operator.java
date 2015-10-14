@@ -6,7 +6,7 @@ public class Operator {
        Class variables
 	 * ------------------------ */
 
-    private static Matrix error = new Matrix(0, 0);
+    private static final Matrix error = new Matrix(0, 0);
 
 	/* ------------------------
        Public Methods
@@ -37,8 +37,7 @@ public class Operator {
                     }// --Column loop end
                 }// --Row loop end
 
-                Matrix result = new Matrix(newGrid);
-                return result;
+                return new Matrix(newGrid);
             }
         }
         return error;
@@ -69,8 +68,7 @@ public class Operator {
                     }// --Column loop end
                 }// --Row loop end
 
-                Matrix result = new Matrix(newGrid);
-                return result;
+                return new Matrix(newGrid);
             }
         }
         return error;
@@ -102,8 +100,7 @@ public class Operator {
                     }// --Column loop end
                 }// --Row loop end
 
-                Matrix result = new Matrix(newGrid);
-                return result;
+                return new Matrix(newGrid);
             }
         }
         return error;

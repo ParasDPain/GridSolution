@@ -23,6 +23,6 @@ public class MatrixCollectionPagerAdapter extends FragmentStatePagerAdapter {
     @Override
     public int getCount() {
         // Number of matrices
-        return 2;
+        return 3;
     }
 }

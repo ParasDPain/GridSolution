@@ -10,10 +10,40 @@
         android:layout_width="0dp"
         android:layout_height="fill_parent"
         android:layout_weight="0.2"
+        android:weightSum="1"
         android:id="@+id/matrix_left_panel"
         android:orientation="vertical"
         android:background="@drawable/rect_empty_border">
         <!-- Controls left to the input matrix -->
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:text="+"
+            android:id="@+id/btn_matrix_sign"
+            android:layout_weight="0.25"
+            android:textSize="@dimen/abc_text_size_large_material" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:inputType="numberDecimal"
+            android:ems="10"
+            android:id="@+id/edit_scalar_mul"
+            android:layout_weight="0.25" />
+
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.25"
+            android:id="@+id/btn_add_row"
+            android:text="+ Row" />
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.25"
+            android:id="@+id/btn_sub_row"
+            android:text="- Row"/>
+
     </LinearLayout>
 
     <LinearLayout
@@ -28,10 +58,20 @@
             android:layout_width="fill_parent"
             android:layout_height="0dp"
             android:layout_weight="0.2"
+            android:weightSum="1"
             android:id="@+id/matrix_top_panel"
-            android:orientation="horizontal"
+            android:orientation="vertical"
             android:background="@drawable/rect_empty_border">
-            <!-- input matrix grid goes here -->
+            <!-- Controls top to the input matrix -->
+            <ExpandableListView
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.5"
+                android:id="@+id/list_functions">
+                <!-- List view for Matrix Operations -->
+            </ExpandableListView>
+
+
         </LinearLayout>
 
         <LinearLayout
@@ -41,17 +81,23 @@
             android:orientation="horizontal"
             android:id="@+id/matrix_main_panel"
             android:background="@drawable/rect_empty_border">
-            <!-- Controls top to the input matrix -->
+            <!-- Input matrix grid goes here -->
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="0dp"
             android:layout_weight="0.2"
+            android:weightSum="1"
             android:id="@+id/matrix_bottom_panel"
-            android:orientation="horizontal"
+            android:orientation="vertical"
             android:background="@drawable/rect_empty_border">
             <!-- Controls bottom to the input matrix -->
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:id="@+id/btn_transpose_test"
+                android:text="Transpose"/>
         </LinearLayout>
 
     </LinearLayout>
@@ -60,10 +106,41 @@
         android:layout_width="0dp"
         android:layout_height="fill_parent"
         android:layout_weight="0.2"
+        android:weightSum="1"
         android:id="@+id/matrix_right_panel"
         android:orientation="vertical"
         android:background="@drawable/rect_empty_border">
         <!-- Controls right to the input matrix -->
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:text="New Matrix"
+            android:id="@+id/btn_add_matrix"
+            android:layout_weight="0.25"
+            android:onClick="NewMatrix" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:text="+"
+            android:id="@+id/btn_matrix_operator"
+            android:layout_weight="0.25"
+            android:textSize="@dimen/abc_text_size_headline_material" />
+
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.25"
+            android:id="@+id/btn_add_col"
+            android:text="+ Col"/>
+
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.25"
+            android:id="@+id/btn_sub_col"
+            android:text="- Col"/>
     </LinearLayout>
 
 </LinearLayout>

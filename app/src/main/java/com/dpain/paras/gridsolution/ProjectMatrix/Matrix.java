@@ -98,13 +98,13 @@ public class Matrix {
 
     }
 
-    // Construct a square identity matrix with size r
-    public Matrix(int r) {
+    // Construct a square identity matrix with a given size
+    public Matrix(int size) {
         // If invalid input, a null object is created with Validity set to false
-        if(IsSizeValid(r,r)) {
+        if(IsSizeValid(size,size)) {
 
-            setRowSize(r);
-            setColumnSize(r);
+            setRowSize(size);
+            setColumnSize(size);
             double[][] newGrid = new double[rowSize][columnSize];
 
             // Simple cyclic increment
