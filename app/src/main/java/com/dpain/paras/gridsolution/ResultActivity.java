@@ -5,7 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.LinearLayout;
 
-import com.dpain.paras.gridsolution.ProjectMatrix.Matrix;
+import com.dpain.paras.gridsolution.ProjectMatrix.framework.Matrix;
 
 import java.util.ArrayList;
 

@@ -14,15 +14,14 @@ import android.widget.LinearLayout;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 
-import com.dpain.paras.gridsolution.ProjectMatrix.Edit;
-import com.dpain.paras.gridsolution.ProjectMatrix.Matrix;
-import com.dpain.paras.gridsolution.ProjectMatrix.Operator;
+import com.dpain.paras.gridsolution.ProjectMatrix.framework.Edit;
+import com.dpain.paras.gridsolution.ProjectMatrix.framework.Matrix;
+import com.dpain.paras.gridsolution.ProjectMatrix.framework.Operator;
 
 // Instances of this class are fragments representing a single
 // object in our collection.
 public class MatrixFragment extends Fragment implements View.OnClickListener {
     // TODO Text size isn't auto
-    // TODO Add a Solve method to parse mathematical expressions
     // TODO Complete the main GUI
 
     // Associated Matrix object and related attributes

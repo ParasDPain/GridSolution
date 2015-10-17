@@ -1,14 +1,16 @@
 package com.dpain.paras.gridsolution;
 
+import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
 import android.view.View;
 import android.widget.Button;
 
-import com.dpain.paras.gridsolution.ProjectMatrix.Matrix;
-import com.dpain.paras.gridsolution.ProjectMatrix.Operator;
+import com.dpain.paras.gridsolution.ProjectMatrix.framework.Matrix;
+import com.dpain.paras.gridsolution.ProjectMatrix.framework.Operator;
 
 
 public class MainActivity extends FragmentActivity {
